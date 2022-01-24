@@ -6,5 +6,6 @@ CSS
 JavaScript
 React
 Sql
-Outra habilidade 1
-Outra habilidade 2
+ES6
+Testes Assíncronos
+Testes Unitários
