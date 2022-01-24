@@ -7,3 +7,5 @@ JavaScript
 React
 Sql
 ES6
+Testes Assíncronos
+Testes Unitários

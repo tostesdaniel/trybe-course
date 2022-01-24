@@ -1,6 +1,6 @@
 # Fundamentos do Desenvolvimento Web
 
-Nesse primeiro módulo aprenderemos tudo para iniciar carreira no mundo do desenvolvimento Web, para que me torne uma pessoa preparada para os próximos módulos.
+Nesse primeiro módulo aprenderemos tudo para iniciar carreira no mundo do desenvolvimento Web, para que nos tornemos preparados para os próximos módulos.
 
 Dentre o conteúdo, aprenderemos:
 
@@ -20,5 +20,5 @@ Aplicar a linguagem de forma semântica, utilizando, com familiaridade, seus ele
 Utilizar de forma correta e organizada os seletores da linguagem para aplicar estilos em marcações HTML.
 
 #### Javascript
-INtroduzir os conceitos da programação estruturada.
+Introduzir os conceitos da programação estruturada.
 Utilizar de forma eficiente os recursos básicos do Javascript.
