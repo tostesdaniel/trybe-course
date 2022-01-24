@@ -1,0 +1,10 @@
+Internet
+Unix
+Bash
+HTML
+CSS
+JavaScript
+React
+Sql
+Outra habilidade 1
+Outra habilidade 2
