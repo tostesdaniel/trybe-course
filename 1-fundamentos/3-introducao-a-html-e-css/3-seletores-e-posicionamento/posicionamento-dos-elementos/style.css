@@ -9,18 +9,26 @@
     position: absolute;
     top: 380px;
     left: 60px;
-  
-  .baloon {
-    position: absolute;
   }
 
-  
+  /* 3 - Posicione o balão para que se torne uma fala de Bowser. */
+  .baloon {
+    position: absolute;
+    left: 200px;
+  }
+
+  /* 2 - Posicione a tag p para que fique dentro do balão de fala. */
   .speach {
     font-size: 25px;
     position: absolute;
+    left: 220px;
+    top: 125px;
+    z-index: 1;
   }
   
   .bowser {
-    width: 200px;
+    width: 500px;
     position: absolute;
+    left: 450px;
+    top: 100px;
   }
