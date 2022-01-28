@@ -11,3 +11,8 @@ h1, p {
 li:hover {
   background-color: darkslategrey;
 }
+
+/* 3.3 - A fonte do item mude quando ele for clicado. */
+li:active {
+  font-family: Helvetica, sans-serif;
+}
