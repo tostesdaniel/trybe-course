@@ -1,1 +1,8 @@
-blank for now =)
+/* 2 - Crie um arquivo no mesmo diretório e nomeie-o de 'style.css'. */
+
+/* 3 - Nesse arquivo .css, adicione os estilos para que: */
+
+/* 3.1 - O texto das tags 'h1' e 'p' estejam centralizados. */
+h1, p {
+  text-align: center;
+}
