@@ -4,3 +4,24 @@ div:hover {
   max-width:fit-content;
 }
 
+/* 2. Faça cada div ter uma cor própria. */
+div:nth-of-type(1) {
+  background-color: #023e8a;
+}
+
+div:nth-of-type(2) {
+  background-color: #deaaff;
+}
+
+div:nth-of-type(3) {
+  background-color: #00FEFF;
+}
+
+div:nth-of-type(4) {
+  background-color: #432818;
+}
+
+div:nth-of-type(5) {
+  background-color: #ffe6a7;
+}
+
