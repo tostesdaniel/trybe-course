@@ -16,3 +16,8 @@ li:hover {
 li:active {
   font-family: Helvetica, sans-serif;
 }
+
+/* 5 - No 'style.css', adicione a propriedade 'list-style: none' para ambas as listas. */
+.generic-list {
+  list-style: none;
+}
