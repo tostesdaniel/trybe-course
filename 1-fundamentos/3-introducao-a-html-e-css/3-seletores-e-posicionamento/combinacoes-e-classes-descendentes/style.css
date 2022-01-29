@@ -20,7 +20,16 @@ ol li:nth-of-type(odd) {
 
 .italic-header {
   font-size: 40px;
+  border: 1px solid black;
+  /* Depois de concluido foi visto no gabarito a solução. Como foi diferente, deixei salvo aqui. 
+  
+  h1 em, h2 em {
+    font-size: 40px;
+    border: 1px solid black; */
 }
+
+
+
 
 /* 3 - Faça todas as li's terem 20px de tamanho de fonte e, para todo texto em itálico dentro de alguma li, utilize a propriedade font-weight para deixá-lo negrito. */
 
