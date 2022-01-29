@@ -1,14 +1,15 @@
 /* 1 - Faça com que todos os itens de Listas Ordenadas tenham uma cor de fundo amarela. Se a numeração do item for PAR, faça a cor de fonte ser verde. Se o número for considerado ÍMPAR, utilize a propriedade text-transform para deixar o texto maiúsculo. (Dica: combinar classes pode ser útil aqui). */
 
-ol {
+#yellow-background li {
   background-color: yellow;
+  font-size: 20px;
 }
 
-ol li:nth-of-type(even) {
+ol li:nth-of-type(even 2n) {
  color: green;
 }
 
-ol li:nth-of-type(odd) {
+ol li:nth-of-type(odd 2n + 1) {
   text-transform: uppercase;
 }
 
@@ -82,6 +83,27 @@ li em {
 #aliados li:nth-of-type(5) > a:hover {
   color: #2fc18c;
 }
+
+/* Adicionei a solução do gabarito para registro */
+/* #aliados li a[href*="stackoverflow"] {
+  color: orange;
+}
+
+#aliados li a[href*="w3schools"] {
+  color: green;
+}
+
+#aliados li a[href*="mozilla"] {
+  color: black;
+}
+
+#aliados li a[href*="devdocs"] {
+  color: yellow;
+}
+
+#aliados li a[href*="trybe"] {
+  color: green;
+} */
 
 /* Dica 1: Utilize o seletor :hover para controlar o passar do mouse. */
 
