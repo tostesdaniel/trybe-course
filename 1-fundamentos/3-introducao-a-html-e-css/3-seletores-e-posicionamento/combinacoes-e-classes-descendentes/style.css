@@ -59,6 +59,30 @@ li em {
 
 /* 5 - (Bônus) Para cada link na lista de aliados da pessoa desenvolvedora, faça com que ao passar o mouse sobre cada um, o texto fique em negrito e assuma a cor de fonte "temática do site" */
 
+#aliados li:hover {
+  font-weight: 600;
+}
+
+#aliados li:nth-of-type(1) > a:hover {
+  color: #a34e08;
+}
+
+#aliados li:nth-of-type(2) > a:hover {
+  color: #56fbbe;
+}
+
+#aliados li:nth-of-type(3) > a:hover {
+  color: #000000;
+}
+
+#aliados li:nth-of-type(4) > a:hover {
+  color: yellow;
+}
+
+#aliados li:nth-of-type(5) > a:hover {
+  color: #2fc18c;
+}
+
 /* Dica 1: Utilize o seletor :hover para controlar o passar do mouse. */
 
 /* Dica 2: Sugestão de cores padrão. StackOverflow (laranja), W3Schools (verde), MDN (preta), DevDocs (amarela), Trybe (verde).  */
