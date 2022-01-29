@@ -25,3 +25,28 @@ div:nth-of-type(5) {
   background-color: #ffe6a7;
 }
 
+/* 3 - Estilize cada uma das tags h3 */
+h3:nth-of-type(1) {
+  padding: 1em;
+  margin: auto;
+}
+
+h3:nth-of-type(2) {
+  padding: 1em;
+  margin: auto
+}
+
+h3:nth-of-type(3) {
+  padding: 1em;
+  margin: auto
+}
+
+h3:nth-of-type(4) {
+  padding: 1em;
+  margin: auto
+}
+
+h3:nth-of-type(5) {
+  padding: 1em;
+  margin: auto
+}
