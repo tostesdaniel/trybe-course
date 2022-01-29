@@ -5,11 +5,11 @@
   font-size: 20px;
 }
 
-ol li:nth-of-type(even 2n) {
+ol li:nth-of-type(even) {
  color: green;
 }
 
-ol li:nth-of-type(odd 2n + 1) {
+ol li:nth-of-type(odd) {
   text-transform: uppercase;
 }
 
