@@ -1,50 +1,75 @@
+* {
+  margin: 0;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+h3 {
+  text-align: center;
+}
 /* 1 - Estilize as divs para que, ao passar o cursor por cima das mesmas, elas ganhem uma borda. */
 div:hover {
-  border: 2px ridge black;
-  max-width:fit-content;
+  border: 4px ridge black;
 }
 
 /* 2. Faça cada div ter uma cor própria. */
 div:nth-of-type(1) {
   background-color: #023e8a;
+  max-width: 338px;
 }
 
 div:nth-of-type(2) {
   background-color: #deaaff;
+  max-width: 338px;
+  box-shadow: inset -5px 5px 50px;
 }
 
 div:nth-of-type(3) {
   background-color: #00FEFF;
+  max-width: 338px;
 }
 
 div:nth-of-type(4) {
   background-color: #432818;
+  max-width: 338px;
 }
 
 div:nth-of-type(5) {
   background-color: #ffe6a7;
+  max-width: 338px;
 }
 
 /* 3 - Estilize cada uma das tags div */
 div:nth-of-type(1) > h3 {
   padding: 1em;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 div:nth-of-type(2) > h3 {
   padding: 1em;
+  
 }
 
-/* 4 - Faça a terceira div ser maior que as demais. */
 div:nth-of-type(3) > h3 {
   padding: 1em;
   font-size: 20px;
-
+  padding-top: 35px;
 }
 
 div:nth-of-type(4) > h3 {
   padding: 1em;
+  color: white;
+  font-size: 200%;
 }
 
 div:nth-of-type(5) > h3 {
   padding: 1em;
+  border-style: dotted;
+}
+
+/* 4 - Faça a terceira div ser maior que as demais. */
+div:nth-of-type(3) {
+  height: 100px;
 }
