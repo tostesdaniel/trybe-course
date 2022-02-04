@@ -4,7 +4,7 @@ let myNumber = 10;
 let fatorial = myNumber;
 
 for (let i = 1; i < myNumber; i += 1) {
-  myNumber *= i;
+  fatorial *= i;
 }
 
 console.log(fatorial);
