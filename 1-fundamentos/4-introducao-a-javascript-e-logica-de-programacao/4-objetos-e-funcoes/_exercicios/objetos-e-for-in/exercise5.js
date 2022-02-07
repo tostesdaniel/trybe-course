@@ -4,7 +4,7 @@ let info = {
   personagem: 'Margarida',
   origem: 'Pato Donald',
   nota: 'Namorada do personagem principal nos quadrinhos do Pato Donald',
-  recorrente: 'Sim'
+  recorrente: 'Sim',
 };
 
 let info2 = {
@@ -14,8 +14,8 @@ let info2 = {
   recorrente: 'Sim',
 };
 
-for (let key in info, info2) {
-  if (info[key] === 'Sim' && info2[key] === 'Sim') {
+for (let key in info) {
+  if (key === 'recorrente' && info[key] === 'Sim' && info2[key] === 'Sim') {
     console.log('Ambos recorrentes');
   } else {
     console.log(info[key] + ' e ' + info2[key]);
