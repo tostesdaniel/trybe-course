@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <header>
+      <h2 id="page-title">Título</h2>
+      <p id="paragraph">Dê uma cor para este parágrafo!</p>
+      <h4 id="subtitle">Subtítulo</h4>
+      <p id="second-paragraph">Segundo parágrafo!</p>
+    </header>
+    <script>
+      const paragraph = document.getElementById("paragraph");
+      paragraph.style.color = "red";
+
+      // 1 - Recupere o elemento que contém o título e altere algo;
+      const pageTitle = document.getElementById("page-title");
+      pageTitle.innerText = "John Wick";
+
+      // 2 - Recupere o segundo parágrafo e altere algo;
+      const secondParagraph = document.getElementById("second-paragraph");
+      secondParagraph.innerText = "Nobody messes with John Wick's dog.";
+
+      // 3 - Recupere o subtítulo e altere algo;
+      const subtitle = document.getElementById("subtitle");
+      subtitle.style.border = "1px solid black"
+    </script>
+  </body>
+</html>
