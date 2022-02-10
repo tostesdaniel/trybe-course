@@ -91,6 +91,10 @@
     main.appendChild(elementRightSection);
     
     // 7 - Adicione uma imagem com 'src' configurado para o valor 'https://picsum.photos/200' e classe 'small-image'. Esse elemento deve ser filho do 'section' criado no passo 5;
+    const elementImage = document.createElement('img');
+    elementImage.className = 'small-image';
+    elementImage.src = 'https://picsum.photos/200';
+    elementLeftSection.appendChild(elementImage);
    
     // 8 - Adicione uma lista não ordenada com os valores de 1 a 10 por extenso, ou seja, um, dois, três, ... como valores da lista.Essa lista deve ser filha do 'section' criado no passo 6;
    
