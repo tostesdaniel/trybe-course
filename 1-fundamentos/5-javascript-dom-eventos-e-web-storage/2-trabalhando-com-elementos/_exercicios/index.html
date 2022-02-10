@@ -69,11 +69,14 @@
     const main = document.createElement('main');
     main.className = 'main-content';
     document.body.appendChild(main);
-    
+
     // 3 - Adicione a tag 'section' com a classe 'center-content' como filho da tag 'main' criada no passo 2;
-    
+    const sectionCenter = document.createElement('section');
+    sectionCenter.className = 'center-content';
+    main.appendChild(sectionCenter);
+
     // 4 - Adicione a tag 'p' como filho do 'section' criado no passo 3 e coloque algum texto;
-    
+
     // 5 - Adicione a tag 'section' com a classe 'left-content' como filho da tag 'main' criada no passo 2;
     
     // 6 - Adicione a tag 'section' com a classe 'right-content' como filho da tag 'main' criada no passo 2;
