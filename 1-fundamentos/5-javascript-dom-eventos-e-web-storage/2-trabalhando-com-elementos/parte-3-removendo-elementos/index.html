@@ -23,11 +23,18 @@
   </main>
   <script>
     // 1 - Remova todos os elementos filhos de paiDoPai exceto pai , elementoOndeVoceEsta e primeiroFilhoDoFilho
-    for (let index = 0; index < paiDoPai.childNodes.length; index++) {
-      const element = array[index];
+    // Foi tirado do gabarito para ser estudado outra hora.
+    const pai = document.getElementById('pai');
 
+    for (let index = pai.childNodes.length - 1; index >= 0; index -= 1) {
+      const currentChildren = pai.childNodes[index];
+      if (currentChildren.id !== 'elementoOndeVoceEsta') {
+        currentChildren.remove();
+      }
     }
 
+    const segundoEUltimoFilhoDoFilho = document.getElementById('segundoEUltimoFilhoDoFilho');
+    segundoEUltimoFilhoDoFilho.remove();
   </script>
 </body>
 
