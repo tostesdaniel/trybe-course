@@ -76,8 +76,12 @@
       changeTitle();
 
       //  5 - Crie uma função que modifique todo o texto da tag <p> para maiúsculo.
-
-
+      let paragraph = document.getElementsByTagName('p')[0];
+      function toUpperCase() {
+        paragraph.innerText = paragraph.innerText.toUpperCase();
+      }
+      toUpperCase();
+      
       //  6 - Crie uma função que exiba o conteúdo de todas as tags <p> no console.
 
         
