@@ -83,7 +83,13 @@
       toUpperCase();
 
       //  6 - Crie uma função que exiba o conteúdo de todas as tags <p> no console.
-      
+      let allParagraphs = document.getElementsByTagName('p');
+      function logParagraphs() {
+        for (let i = 0; i < allParagraphs.length; i += 1) {
+          console.log(allParagraphs[i].innerText);
+        }
+      }
+      logParagraphs();
         
     </script>
   </body>
