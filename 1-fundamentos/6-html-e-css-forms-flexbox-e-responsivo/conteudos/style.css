@@ -54,6 +54,12 @@ p strong {
   width: 200px;
 }
 
+@media screen and (min-width: 500px) {
+  .card:nth-of-type(1) {
+    display: block;
+  }
+}
+
 .card:nth-of-type(1) {
   background-color: #0fa36b;
 }
