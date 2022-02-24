@@ -61,7 +61,7 @@ p strong {
   }
 }
 
-/* Faz a segunda div aparecer somente quando a largura da tela estive entre 600px e 100px */
+/* Faz a segunda div aparecer somente quando a largura da tela estiver entre 600px e 100px */
 @media screen and (min-width: 600px) and (max-width: 1000px) {
   .card:nth-of-type(2) {
     display: block;
@@ -78,6 +78,13 @@ p strong {
 @media screen and (min-width: 950px) {
   .card:nth-of-type(3) {
     display: block;
+  }
+}
+
+/* Faz com que o texto da classe trick apareça quando a largura da tela for menos que 500px */
+@media screen and (max-width: 500px) {
+  p.trick {
+    color: #525252;
   }
 }
 
