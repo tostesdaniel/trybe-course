@@ -5,3 +5,59 @@ html {
 *, *:before, *:after {
   box-sizing: inherit;
 }
+
+body {
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+}
+
+p {
+  margin: 25px 3% 0;
+}
+
+h2 {
+  margin: 3% 3% ;
+}
+
+.aside-one ul{
+  list-style: none;
+}
+
+@media (max-width: 280px) {
+  header nav {
+    display: none;
+  }
+}
+
+@media (max-width: 360px) {
+  .container {
+    flex-direction: column;
+  }
+  
+  header p {
+    font-size: 2em;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  header nav {
+    position: absolute;
+    right: 5px;
+  }
+
+  header nav ul {
+    display: flex;
+    /* flex-flow: column wrap; */
+    justify-content: flex-end;
+    list-style: none;
+  }
+
+  header nav ul li {
+    padding-right: 5px;
+  }
+}
