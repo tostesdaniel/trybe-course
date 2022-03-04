@@ -1,0 +1,66 @@
+/* Feito com Airel Ribeiro e Isadora Saraiva */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Ubuntu';
+}
+
+.header-img {
+  width: 70px;
+}
+
+.gallery-img {
+  width: 150px;
+}
+
+.social-img {
+  width: 25px;
+  margin-left: 10px;
+}
+
+header {
+  background-color: rgb(31, 31, 31);
+  color: rgb(228, 228, 228);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.texto {
+  color: rgb(31, 31, 31);
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: 500;
+}
+.techs {
+  height: 450px;
+  margin: auto;
+  width: 32%;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: space-between;
+  justify-content: space-evenly;
+}
+
+h4 {
+  padding: 5px;
+}
+
+.card {
+  text-align: center;
+  width: 180px;
+  height: 210px;
+  padding:10px;
+  background-color: rgb(238, 238, 238);
+  border-radius: 5%;
+  box-shadow: 3px 3px 1px rgb(172, 172, 172);
+}
+
+footer {
+  padding: 35px;
+  display: flex;
+  justify-content: center;
+}
