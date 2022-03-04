@@ -1,0 +1,97 @@
+<!-- Feito com Airel Ribeiro, André Wiliams e Isadora Saraiva -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    fieldset {
+      border: 0;
+      margin-top: 10px;
+    }
+
+    textarea {
+      resize: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Header da Página</h1>
+  </header>
+
+  <main>
+    <form action="">
+      <label for="nome">Nome:
+        <input required id="nome" type="text" minlength="10" maxlength="40" req>
+      </label>
+
+      <br>
+      <br>
+
+      <label for="email">Email:
+        <input required id="email" type="email" minlength="10" maxlength="50">
+      </label>
+
+      <br>
+      <br>
+
+      <label for="opcao1">
+        <input required id="opcao1" name="opcoes" type="radio" value="cid">Cidade
+      </label>
+      <label for="opcao2">
+        <input required id="opcao2" name="opcoes" type="radio" value="cam">Campo
+      </label>
+      <label for="opcao3">
+        <input required id="opcao3" name="opcoes" type="radio" value="pra">Praia
+      </label>
+      <label for="opcao4">
+        <input required id="opcao4" name="opcoes" type="radio" value="mon">Montanhas
+      </label>
+      <br>
+      <fieldset>
+        <legend>Espaço para digitar a resposta:</legend>
+      
+      <textarea required name="" id="text-area" cols="30" rows="10" maxlength="500" placeholder="Por que você deveria ser a pessoa desenvolvedora a ganhar o concurso TrybeTrip?"></textarea>
+      </fieldset>
+      <label for="data">Qual a melhor data para realizar sua viagem?
+        <input required id="data" type="date">
+      </label>
+      <br>
+
+      <input type="checkbox">Gostaria de receber outras incríveis oportunidades oferecidas pela Trybe?
+      <br>
+      <input id="mustcheck" type="checkbox">Concordo que imagens das minhas férias poderão ser usadas na divulgação de concursos futuros.
+      <br>
+      <button id="submit" type="submit" disabled>Enviar</button>
+      <button id="reset" type="reset">Apagar</button>
+    </form>
+  </main>
+
+
+
+  <script>
+    const obrigatoryBox = document.querySelector('#mustcheck');
+    const submitButton = document.querySelector('#submit');
+
+    function stopHammerTime(event) {
+      // if (submitButton.disabled) {
+      //   alert('Dados Inválidos');
+      // }
+      alert('Dados enviados com sucesso! Obrigado por participar do concurso TrybeTrip.');
+    }
+
+    function buttonUp(event) {
+      // Oi gente! OI DANI
+      //check começa off
+      //botão começa off
+      submitButton.disabled = !obrigatoryBox.checked;
+    }
+
+    submitButton.addEventListener('click', stopHammerTime);
+    obrigatoryBox.addEventListener('change', buttonUp);
+  </script>
+</body>
+</html>
