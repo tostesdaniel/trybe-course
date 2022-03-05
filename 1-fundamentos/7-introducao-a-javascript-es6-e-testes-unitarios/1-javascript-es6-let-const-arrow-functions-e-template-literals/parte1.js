@@ -28,3 +28,13 @@ const testingScope = escopo => {
 }
 
 testingScope(true);
+
+// Exercicio 2 - Função que retorna o array oddsAndEvens em ordem crescente
+
+const oddsAndEvens = [13, 3, 4, 10, 7, 2];
+
+// Seu código aqui.
+const sortArray = arrayToSort => arrayToSort.sort((a, b) => a - b);
+const sortedArray = sortArray(oddsAndEvens);
+
+console.log(`Os números ${sortedArray} se encontram ordenados de forma crescente!`); // será necessário alterar essa linha 😉
