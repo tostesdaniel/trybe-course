@@ -1,0 +1,15 @@
+{
+  "name": "exercicios",
+  "version": "1.0.0",
+  "description": "tests for exercise lessons",
+  "main": "exercise1.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^27.5.1"
+  }
+}
