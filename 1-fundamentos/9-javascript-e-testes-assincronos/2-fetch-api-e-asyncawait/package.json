@@ -1,0 +1,15 @@
+{
+  "name": "2-fetch-api-e-asyncawait",
+  "version": "1.0.0",
+  "description": "Tá bugado =(",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^2.6.7"
+  }
+}
