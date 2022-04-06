@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+}
+
+h1 {
+  text-align: center;
+}
+
+.pokemon {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  flex: 1 1 0;
+  min-width: 25%;
+  margin: 10px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  list-style: none;
+}
+
+.pokedex {
+  display: flex;
+  flex-wrap: wrap;
+}
