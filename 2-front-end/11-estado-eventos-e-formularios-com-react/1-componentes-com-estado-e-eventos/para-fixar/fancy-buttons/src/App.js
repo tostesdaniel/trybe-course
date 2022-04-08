@@ -30,8 +30,10 @@ class App extends React.Component {
     this.setState((state, _props) => ({
 
       // firstBtnClicks: 1,
-      firstBtnClicks: state.firstBtnClicks + 1
-    }));
+      firstBtnClicks: state.firstBtnClicks + 1,
+    }), () => {
+      console.log(`First button color is now ${this.colorButton(this.state.firstBtnClicks)}`);
+    });
   }
 
   handleSecondBtnClick() {
@@ -39,8 +41,10 @@ class App extends React.Component {
     this.setState((state, _props) => ({
 
       // secondBtnClicks: 1,
-      secondBtnClicks: state.secondBtnClicks + 1
-    }));
+      secondBtnClicks: state.secondBtnClicks + 1,
+    }), () => {
+      console.log(`Second button color is now ${this.colorButton(this.state.secondBtnClicks)}`);
+    });
   }
 
   handleThirdBtnClick() {
@@ -48,17 +52,39 @@ class App extends React.Component {
     this.setState((state, _props) => ({
 
       // thirdBtnClicks: 1,
-      thirdBtnClicks: state.thirdBtnClicks + 1
-    }));
+      thirdBtnClicks: state.thirdBtnClicks + 1,
+    }), () => {
+      console.log(`Third button color is now ${this.colorButton(this.state.secondBtnClicks)}`);
+    });
+  }
+
+// 8 - Defina uma lógica que estabeleça que, quando o número de cliques no botão for par, ele deve ser verde.
+  colorButton(n) {
+    return n % 2 === 0 ? 'green' : 'white';
   }
 
 // 2 - Faça com que sua aplicação exiba três botões lado a lado com textos diferentes. Cada botão clicado deve acionar um evento diferente, cada um escrevendo algo diferente no console do navegador via console.log().
   render() {
+    const { firstBtnClicks, secondBtnClicks, thirdBtnClicks } = this.state;
     return (
       <>
-        <button onClick={ this.handleFirstBtnClick }>{ this.state.firstBtnClicks }</button>
-        <button onClick={ this.handleSecondBtnClick }>{ this.state.secondBtnClicks }</button>
-        <button onClick={ this.handleThirdBtnClick }>{ this.state.thirdBtnClicks }</button>
+        <button
+          onClick={ this.handleFirstBtnClick }
+          style={{ backgroundColor: this.colorButton(firstBtnClicks) }}
+        >
+          { this.state.firstBtnClicks }
+        </button>
+        <button
+          onClick={ this.handleSecondBtnClick }
+          style={{ backgroundColor: this.colorButton(secondBtnClicks) }}
+        >
+          { this.state.secondBtnClicks }</button>
+        <button 
+          onClick={ this.handleThirdBtnClick }
+          style={{ backgroundColor: this.colorButton(thirdBtnClicks) }}
+        >
+          { this.state.thirdBtnClicks }
+        </button>
       </>
     );
   }
