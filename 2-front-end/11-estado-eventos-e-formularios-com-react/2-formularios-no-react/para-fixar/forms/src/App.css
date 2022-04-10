@@ -1,5 +1,17 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 .App {
   text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 15px;
 }
 
 .App-logo {
