@@ -8,4 +8,13 @@ describe('Teste de Mocks e Inputs', () => {
     expect(services.getRandomInt).toHaveBeenCalled();
     expect(services.getRandomInt).toHaveBeenCalledTimes(1);
   });
+
+  it('Testa', () => {
+    services.getRandomInt = jest.fn().mockImplementation((x, y) => x / y);
+
+    expect(services.getRandomInt(100, 10)).toBe(10);
+    expect(services.getRandomInt).toHaveBeenCalled();
+    expect(services.getRandomInt).toHaveBeenCalledTimes(1);
+    expect(services.getRandomInt).toHaveBeenCalledWith(100, 10);
+  })
 });
