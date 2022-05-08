@@ -79,3 +79,24 @@ describe('5 -', () => {
     expect(services.toUpperCase(string)).toBe(string.toUpperCase());
   });
 });
+
+describe('Testa a requisição da API', () => {
+  services.fetchDogImage = jest.fn();
+  afterEach(services.fetchDogImage.mockReset);
+
+  it('Testa a requisição quando a promise é resolvida', async () => {
+    services.fetchDogImage.mockResolvedValue('request sucess');
+
+    await expect(services.fetchDogImage()).resolves.toBe('request sucess');
+    expect(services.fetchDogImage).toHaveBeenCalled();
+    expect(services.fetchDogImage).toHaveBeenCalledTimes(1);
+  });
+
+  it('Testa a requisição quando a promise é rejeitada', async () => {
+    services.fetchDogImage.mockResolvedValue('request failed');
+
+    await expect(services.fetchDogImage()).resolves.toBe('request failed');
+    expect(services.fetchDogImage).toHaveBeenCalled();
+    expect(services.fetchDogImage).toHaveBeenCalledTimes(1);
+  });
+});
