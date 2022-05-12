@@ -23,12 +23,12 @@
     </div>
     <script>
       // 3 - Crie actions que alterem o nome e o sobrenome dos estados iniciais, e adapte seu respectivo reducer.
-      const ACTION_CHANGE_FIRST_REDUCER = () => ({
-        type: 'CHANGE_FIRST_REDUCER',
+      const ACTION_CHANGE_FIRST_FULL_NAME = () => ({
+        type: 'CHANGE_FIRST_FULL_NAME',
       });
 
-      const ACTION_CHANGE_SECOND_REDUCER = () => ({
-        type: 'CHANGE_SECOND_REDUCER',
+      const ACTION_CHANGE_SECOND_FULL_NAME = () => ({
+        type: 'CHANGE_SECOND_FULL_NAME',
       });
 
       const ESTADO_INICIAL_1 = {
@@ -48,13 +48,12 @@
       // 3 - ... e adapte seu respectivo reducer.
       const meuPrimeiroReducer = (state = ESTADO_INICIAL_1, action) => {
         switch (action.type) {
-          case 'CHANGE_FIRST_REDUCER':
+          case 'CHANGE_FIRST_FULL_NAME':
             return {
-              nome: 'Airel',
-              sobrenome: 'Ribeiro',
-              endereco: 'No meu coração',
-              cidade: 'Definitivamente não é da minha =(',
-            }
+              ...state,
+              nome: action.nome,
+              sobrenome: action.sobrenome,
+            };
           default:
             return state;
         }
@@ -63,13 +62,12 @@
       // 3 - ... e adapte seu respectivo reducer.
       const meuSegundoReducer = (state = ESTADO_INICIAL_2, action) => {
         switch (action.type) {
-          case 'CHANGE_SECOND_REDUCER':
+          case 'CHANGE_SECOND_FULL_NAME':
             return {
-                nome: 'Isadora',
-                sobrenome: 'Saraiva',
-                endereco: 'No meu coração',
-                cidade: 'Definitivamente não é da minha =(',
-              }
+              ...state,
+                nome: action.nome,
+                sobrenome: action.sobrenome,
+              };
           default:
             return state;
         }
@@ -83,6 +81,32 @@
 
       // 2 - Crie uma store com a combinação dos reducers.
       const store = Redux.createStore(reducerCombinado);
+
+      // 4 - Crie dispatchs para alterar os nomes após alguns segundos depois que a página carregar.
+      window.onload = () => {
+        setTimeout(() => {
+          store.dispatch({
+            type: 'CHANGE_FIRST_FULL_NAME',
+            nome: 'Airel',
+            sobrenome: 'Ribeiro',
+          });
+          store.dispatch({
+            type: 'CHANGE_SECOND_FULL_NAME',
+            nome: 'Isadora',
+            sobrenome: 'Saraiva',
+          });
+        }, 1500);
+      };
+
+      // 5 - Adicione um store.subscribe() para atualizar as informações na página de acordo com o que temos armazenado na store. Quando a página carregar o nome renderizado deve ser alterado após alguns segundos.
+      store.subscribe(() => {
+        const { meuPrimeiroReducer, meuSegundoReducer } = store.getState();
+        document.querySelector('#nome-1').innerHTML = meuPrimeiroReducer.nome;
+        document.querySelector('#sobrenome-1').innerHTML = meuPrimeiroReducer.sobrenome;
+
+        document.querySelector('#nome-2').innerHTML = meuSegundoReducer.nome;
+        document.querySelector('#sobrenome-2').innerHTML = meuSegundoReducer.sobrenome;
+      });
     </script>
   </body>
 </html>
