@@ -1,0 +1,31 @@
+.accessibility {
+  display: flex;
+  justify-content: space-evenly;
+  border: 2px solid gray;
+  
+}
+
+.accessibilityOptions {
+  text-align: center;
+}
+
+.bgColor {
+  /* display: inline-block; */
+  border: 1px solid gray;
+}
+
+.fontColor {
+  border: 1px solid gray;
+}
+
+.fontSize {
+  border: 1px solid gray;
+}
+
+.lineSpacing {
+  border: 1px solid gray;
+}
+
+.fontType {
+  border: 1px solid gray;
+}
