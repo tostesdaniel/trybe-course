@@ -1,6 +1,16 @@
-const calcIMC = (peso = 70, altura = 1.72) =>
-  console.log(`IMC: ${(peso / altura ** 2).toFixed(2)}`);
+const readlineSync = require('readline-sync');
 
-calcIMC();
+const calcIMC = (peso, altura) => peso / (altura / 100) ** 2;
+
+function main() {
+  const nome = readlineSync.question('Qual seu nome?');
+  const peso = readlineSync.questionInt('Qual seu peso?');
+  const altura = readlineSync.questionInt('Qual sua altura em centímetros?');
+
+  const imc = calcIMC(peso, altura).toFixed(2);
+  console.log(`${nome}, seu IMC é de ${imc}`);
+}
+
+main();
 
 module.exports = calcIMC;
