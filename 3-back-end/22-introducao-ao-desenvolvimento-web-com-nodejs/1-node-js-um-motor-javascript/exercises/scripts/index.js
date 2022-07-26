@@ -14,8 +14,7 @@ const escolherScript = () => {
     'Qual script deseja selecionar?'
   );
   console.log(`O script "${queries[index]}" foi selecionado.`);
-  const script = require(`./${scripts[index]}`);
-  script();
+  require(`./${scripts[index]}`);
 };
 
 escolherScript();
