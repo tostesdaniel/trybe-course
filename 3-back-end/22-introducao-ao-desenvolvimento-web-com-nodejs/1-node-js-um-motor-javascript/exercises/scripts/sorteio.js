@@ -15,6 +15,11 @@ function main() {
     console.log('Parabéns, número correto!');
   }
   console.log(`Não foi dessa vez. O número sorteado era ${numero}`);
+
+  const playAgain = readlineSync.keyInYNStrict('Deseja jogar de novo?');
+  if (playAgain) {
+    main();
+  }
 }
 
 main();
