@@ -165,4 +165,4 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [ ] 22-3: _Mocha, Chai e Sinon - Testes de Bck-end com Node.js
 - [ ] 22-4: _Express - HTTP com Node.js
 - [ ] 22-5: _Express - Middlewares
-- [ ] 23-6: _[Projeto - Talker Manager]()_
+- [ ] 22-6: _[Projeto - Talker Manager]()_
