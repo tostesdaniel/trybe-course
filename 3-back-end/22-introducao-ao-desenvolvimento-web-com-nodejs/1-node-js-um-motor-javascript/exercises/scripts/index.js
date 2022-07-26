@@ -4,8 +4,9 @@ const queries = [
   'Índice de massa corporal',
   'Adivinhar número',
   'Velocidade média',
+  'Fatorial',
 ];
-const scripts = ['imc', 'sorteio', 'velocidade'];
+const scripts = ['imc', 'sorteio', 'velocidade', 'factorial'];
 
 const escolherScript = () => {
   const index = readlineSync.keyInSelect(
