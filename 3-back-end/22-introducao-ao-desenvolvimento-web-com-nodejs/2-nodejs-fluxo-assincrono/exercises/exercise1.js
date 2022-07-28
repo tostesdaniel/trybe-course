@@ -31,3 +31,5 @@ async function main(param1, param2, param3) {
 }
 
 main(6, 7, 10);
+
+module.exports = main;
