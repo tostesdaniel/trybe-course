@@ -30,6 +30,7 @@ describe('Tests function', () => {
         expect(result).to.be.a('string');
       });
     });
+
     describe('when given "0"', () => {
       it('returns "absolute"', () => {
         const result = checkNaturalNum(0);
@@ -41,6 +42,24 @@ describe('Tests function', () => {
         const result = checkNaturalNum(0);
 
         expect(result).to.be.a('string');
+      });
+    });
+
+    describe('when given a value that is not a number', () => {
+      describe("and it's a string of letters", () => {
+        it('returns an error', () => {
+          const result = checkNaturalNum('abcdefg');
+
+          expect(result).to.equal('Error: Value must be a number');
+        });
+      });
+
+      describe("and it's a string of numbers", () => {
+        it('returns an error', () => {
+          const result = checkNaturalNum('6');
+
+          expect(result).to.equal('Error: Value must be a number');
+        });
       });
     });
   });
