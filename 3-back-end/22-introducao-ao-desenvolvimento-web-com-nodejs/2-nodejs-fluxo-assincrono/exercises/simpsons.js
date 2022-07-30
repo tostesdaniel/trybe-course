@@ -49,4 +49,13 @@ async function getCharacter(id) {
 // ────────────────────────────────────────────────────────────────────────────────
 // Crie uma função que altere o arquivo simpsons.json retirando os personagens com id 10 e 6.
 
+async function removeCharacters(c1, c2) {
+  const data = await fs.readFile('./simpsons.json', 'utf8');
+  const characters = JSON.parse(data);
+  const filteredCharacters = JSON.stringify(
+    characters.filter(({ id }) => Number(id) !== c1 && Number(id) !== c2)
+  );
+  await fs.writeFile('./simpsons.json', filteredCharacters);
+}
 
+removeCharacters(6, 10);
