@@ -1,7 +1,4 @@
-/* Você pode utilizar then/catch ou async/await para escrever seu código. Procure não utilizar callbacks.
-
-    // ────────────────────────────────────────────────────────────────────────────────
-    Crie uma função que substitua o personagem Nelson Muntz pela personagem Maggie Simpson no arquivo simpsonFamily.json. */
+// Você pode utilizar then/catch ou async/await para escrever seu código. Procure não utilizar callbacks.
 
 // const fs = require('fs/promises');
 const fs = require('fs/promises');
@@ -90,4 +87,22 @@ async function addCharacterToSimpsonFamily(characterName) {
   return writeFile('./simpsonFamily.json', newSimpsonFamily);
 }
 
-addCharacterToSimpsonFamily('Nelson Muntz');
+// addCharacterToSimpsonFamily('Nelson Muntz');
+
+// ────────────────────────────────────────────────────────────────────────────────
+// Crie uma função que substitua o personagem Nelson Muntz pela personagem Maggie Simpson no arquivo simpsonFamily.json.
+
+async function replaceCharacter(character, replacement) {
+  const simpsonFamily = await readFile('./simpsonFamily.json');
+  const characters = await readFile('./simpsons.json');
+  const replacementCharacter = characters.find(
+    ({ name }) => name === replacement
+  );
+  const newSimpsonFamily = simpsonFamily.map(({ name }, i) => {
+    return name === character ? replacementCharacter : simpsonFamily[i];
+  });
+  console.log(newSimpsonFamily);
+  return await writeFile('./simpsonFamily.json', newSimpsonFamily);
+}
+
+replaceCharacter('Nelson Muntz', 'Maggie Simpson');
