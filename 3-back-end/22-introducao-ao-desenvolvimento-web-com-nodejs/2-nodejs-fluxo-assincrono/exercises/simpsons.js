@@ -1,8 +1,6 @@
 /* Você pode utilizar then/catch ou async/await para escrever seu código. Procure não utilizar callbacks.
 
     // ─────────────────────────────────────────────────────────────────
-    Crie uma função que leia o arquivo simpsons.json e crie um novo arquivo, chamado simpsonFamily.json, contendo as personagens com id de 1 a 4.
-    // ─────────────────────────────────────────────────────────────────
     Crie uma função que adicione ao arquivo simpsonFamily.json o personagem Nelson Muntz.
     // ────────────────────────────────────────────────────────────────────────────────
     Crie uma função que substitua o personagem Nelson Muntz pela personagem Maggie Simpson no arquivo simpsonFamily.json. */
@@ -58,4 +56,15 @@ async function removeCharacters(c1, c2) {
   await fs.writeFile('./simpsons.json', filteredCharacters);
 }
 
-removeCharacters(6, 10);
+// removeCharacters(6, 10);
+
+// ─────────────────────────────────────────────────────────────────
+// Crie uma função que leia o arquivo simpsons.json e crie um novo arquivo, chamado simpsonFamily.json, contendo as personagens com id de 1 a 4.
+
+async function writeSimpsonFamily() {
+  const data = await fs.readFile('./simpsons.json', 'utf8');
+  const simpsonFamily = JSON.parse(data).slice(0, 4);
+  await fs.writeFile('./simpsonFamily.json', JSON.stringify(simpsonFamily));
+}
+
+writeSimpsonFamily();
