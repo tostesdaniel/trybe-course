@@ -1,12 +1,22 @@
 /* Você pode utilizar then/catch ou async/await para escrever seu código. Procure não utilizar callbacks.
 
-    // ─────────────────────────────────────────────────────────────────
-    Crie uma função que adicione ao arquivo simpsonFamily.json o personagem Nelson Muntz.
     // ────────────────────────────────────────────────────────────────────────────────
     Crie uma função que substitua o personagem Nelson Muntz pela personagem Maggie Simpson no arquivo simpsonFamily.json. */
 
 // const fs = require('fs/promises');
 const fs = require('fs/promises');
+
+// ─── Helper Function To Read From File ──────────────────────────────────────────
+
+async function readFile(filepath) {
+  return JSON.parse(await fs.readFile(filepath, 'utf8'));
+}
+
+// ─── Helper Function To Write To File ───────────────────────────────────────────
+
+async function writeFile(filepath, content) {
+  return await fs.writeFile(filepath, JSON.stringify(content));
+}
 
 // Crie uma função que leia todos os dados do arquivo e imprima cada personagem no formato id - Nome. Por exemplo: 1 - Homer Simpson.
 
@@ -67,4 +77,17 @@ async function writeSimpsonFamily() {
   await fs.writeFile('./simpsonFamily.json', JSON.stringify(simpsonFamily));
 }
 
-writeSimpsonFamily();
+// writeSimpsonFamily();
+
+// ─────────────────────────────────────────────────────────────────
+// Crie uma função que adicione ao arquivo simpsonFamily.json o personagem Nelson Muntz.
+
+async function addCharacterToSimpsonFamily(characterName) {
+  const simpsonFamily = await readFile('./simpsonFamily.json');
+  const characters = await readFile('./simpsons.json');
+  const newCharacter = characters.find(({ name }) => name === characterName);
+  const newSimpsonFamily = simpsonFamily.concat(newCharacter);
+  return writeFile('./simpsonFamily.json', newSimpsonFamily);
+}
+
+addCharacterToSimpsonFamily('Nelson Muntz');
