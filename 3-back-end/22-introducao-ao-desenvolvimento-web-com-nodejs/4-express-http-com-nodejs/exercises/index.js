@@ -58,11 +58,11 @@ app.put('/users/:name/:age', (req, res) => {
 /* -------------------------------------------------------------------------- */
 /* O endpoint deve retornar um array com todos os simpsons ------------------ */
 
-const getSimpsons = require('./fs-utils');
+const fs_utils = require('./fs-utils');
 
 app.get('/simpsons', async (_req, res) => {
   try {
-    const simpsons = await getSimpsons();
+    const simpsons = await fs_utils.getSimpsons();
     return res.status(200).json(simpsons);
   } catch (error) {
     return res.status(500).end();
@@ -78,7 +78,7 @@ app.get('/simpsons', async (_req, res) => {
 app.get('/simpsons/:id', async (req, res) => {
   const { id } = req.params;
   try {
-    const simpsons = await getSimpsons();
+    const simpsons = await fs_utils.getSimpsons();
     const simpsonMatch = simpsons.find((simpson) => simpson.id === id);
     if (!simpsonMatch) {
       return res.status(404).json({ message: 'Simpson not found' });
@@ -90,6 +90,27 @@ app.get('/simpsons/:id', async (req, res) => {
 });
 
 /* -------------------------------------------------------------------------- */
+/* 8 - Crie um endpoint POST /simpsons                                        */
+/* -------------------------------------------------------------------------- */
+/* O corpo da requisição deve receber o seguinte JSON: { id: <id-da-personagem>, name: '<nome-da-personagem>' } */
+/* Caso já exista uma personagem com o id informado, devolva o JSON { message: 'id already exists' } com o status 409 - Conflict */
+/* Caso a personagem ainda não exista, adicione-a ao arquivo simpsons.json e devolva um body vazio com o status 204 - No Content. */
+
+app.post('/simpsons', async (req, res) => {
+  const { id, name } = req.body;
+  try {
+    const simpsons = await fs_utils.getSimpsons();
+    const simpsonExists = simpsons.some((simpson) => simpson.id === id);
+    if (simpsonExists) {
+      return res.status(409).json({ message: 'Simpson already exists' });
+    }
+    simpsons.push({ id, name });
+    await fs_utils.createSimpson(simpsons);
+    return res.status(204).end();
+  } catch (error) {
+    return res.status(500).end();
+  }
+});
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
