@@ -1,3 +1,5 @@
+const fs = require('fs/promises');
+
 const express = require('express');
 const app = express();
 const port = 3000;
@@ -49,6 +51,22 @@ app.put('/users/:name/:age', (req, res) => {
   return res.status(200).json({
     message: `Seu nome é ${name} e você tem ${age} anos de idade`,
   });
+});
+
+/* -------------------------------------------------------------------------- */
+/* 6 - Crie um endpoint GET /simpsons                                         */
+/* -------------------------------------------------------------------------- */
+/* O endpoint deve retornar um array com todos os simpsons ------------------ */
+
+const getSimpsons = require('./fs-utils');
+
+app.get('/simpsons', async (_req, res) => {
+  try {
+    const simpsons = await getSimpsons();
+    return res.status(200).json(simpsons);
+  } catch (error) {
+    return res.status(500).end();
+  }
 });
 
 app.listen(port, () => {
