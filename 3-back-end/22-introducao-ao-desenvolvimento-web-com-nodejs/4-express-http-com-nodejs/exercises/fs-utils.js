@@ -6,4 +6,8 @@ async function getSimpsons() {
     .then((data) => JSON.parse(data));
 }
 
-module.exports = getSimpsons;
+async function createSimpson(content) {
+  return await fs.writeFile('./simpsons.json', JSON.stringify(content));
+}
+
+module.exports = { getSimpsons, createSimpson };
