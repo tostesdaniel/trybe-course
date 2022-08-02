@@ -4,14 +4,14 @@ const port = 3000;
 
 app.use(express.json());
 
-const validateName = require('./validationMiddleware');
+const { validateName, validateInfo } = require('./validationMiddleware');
 
 /* -------------------------------------------------------------------------- */
 /* 1 - Crie uma rota POST /sales que receba uma requisição                    */
 /*     que envie productName e infos no body da requisição                    */
 /* -------------------------------------------------------------------------- */
 
-app.post('/sales', validateName, (req, res) => {
+app.post('/sales', validateName, validateInfo, (req, res) => {
   return res
     .status(201)
     .json({ message: 'Sale has been created successfully' });
