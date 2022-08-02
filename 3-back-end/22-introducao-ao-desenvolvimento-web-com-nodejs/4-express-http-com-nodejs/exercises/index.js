@@ -1,10 +1,13 @@
-const fs = require('fs/promises');
+const crypto = require('crypto');
 
 const express = require('express');
 const app = express();
 const port = 3000;
 
 app.use(express.json());
+
+const authMiddleware = require('./middlewares/authMiddleware');
+app.use(authMiddleware);
 
 /* -------------------------------------------------------------------------- */
 /* 1 - Crie uma rota GET /ping                                                */
@@ -110,6 +113,19 @@ app.post('/simpsons', async (req, res) => {
   } catch (error) {
     return res.status(500).end();
   }
+});
+
+/* -------------------------------------------------------------------------- */
+/* Bônus                                                                      */
+/* -------------------------------------------------------------------------- */
+/* Adicione autenticação a todos os endpoints ------------------------------- */
+/* Crie uma rota POST /signup ----------------------------------------------- */
+
+const validateSignup = require('./middlewares/validateSignup');
+
+app.post('/signup', validateSignup, (_req, res) => {
+  const token = crypto.randomBytes(8).toString('hex');
+  return res.status(200).json({ token: token });
 });
 
 app.listen(port, () => {
