@@ -40,7 +40,7 @@ app.post('/greetings', (req, res) => {
 });
 
 /* -------------------------------------------------------------------------- */
-/* Crie uma rota PUT /users/:name/:age                                        */
+/* 4 - Crie uma rota PUT /users/:name/:age                                        */
 /* -------------------------------------------------------------------------- */
 /* Sua rota deve retornar o seguinte JSON: { "message": "Seu nome é <name> e você tem <age> anos de idade" } */
 
