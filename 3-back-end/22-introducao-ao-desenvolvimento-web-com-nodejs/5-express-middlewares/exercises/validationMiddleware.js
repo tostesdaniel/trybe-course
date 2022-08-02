@@ -20,4 +20,18 @@ function validateInfo(req, res, next) {
   next();
 }
 
-module.exports = { validateName, validateInfo };
+function validateDate(req, res, next) {
+  const {
+    infos: { saleDate },
+  } = req.body;
+  if (!saleDate) {
+    return res.status(400).json({ message: 'saleDate is required' });
+  }
+  const dateRegex = /^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$/i;
+  if (!dateRegex.test(saleDate)) {
+    return res.status(400).json({ message: 'Invalid date format' });
+  }
+  next();
+}
+
+module.exports = { validateName, validateInfo, validateDate };
