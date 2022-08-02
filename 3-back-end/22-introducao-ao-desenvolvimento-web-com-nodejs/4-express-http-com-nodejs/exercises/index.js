@@ -69,6 +69,28 @@ app.get('/simpsons', async (_req, res) => {
   }
 });
 
+/* -------------------------------------------------------------------------- */
+/* 7 - Crie um endpoint GET /simpsons/:id                                     */
+/* -------------------------------------------------------------------------- */
+/* O endpoint deve retornar o personagem com o id informado na URL da requisição */
+/* Caso não exista nenhum personagem com o id especificado, retorne o JSON { message: 'simpson not found' } com o status 404 - Not Found */
+
+app.get('/simpsons/:id', async (req, res) => {
+  const { id } = req.params;
+  try {
+    const simpsons = await getSimpsons();
+    const simpsonMatch = simpsons.find((simpson) => simpson.id === id);
+    if (!simpsonMatch) {
+      return res.status(404).json({ message: 'Simpson not found' });
+    }
+    return res.status(200).json(simpsonMatch);
+  } catch (error) {
+    return res.status(500).end();
+  }
+});
+
+/* -------------------------------------------------------------------------- */
+
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
