@@ -11,6 +11,7 @@ const {
   validateWarranty,
   validateSignup,
 } = require('./validationMiddleware');
+const authMiddleware = require('./authMiddleware');
 
 /* -------------------------------------------------------------------------- */
 /* 1 - Crie uma rota POST /sales que receba uma requisição                    */
@@ -19,6 +20,7 @@ const {
 
 app.post(
   '/sales',
+  authMiddleware,
   validateName,
   validateInfo,
   validateDate,
