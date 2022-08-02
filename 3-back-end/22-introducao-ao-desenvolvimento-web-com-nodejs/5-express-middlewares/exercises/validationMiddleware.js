@@ -27,11 +27,27 @@ function validateDate(req, res, next) {
   if (!saleDate) {
     return res.status(400).json({ message: 'saleDate is required' });
   }
-  const dateRegex = /^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$/i;
+  const dateRegex =
+    /^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$/i;
   if (!dateRegex.test(saleDate)) {
     return res.status(400).json({ message: 'Invalid date format' });
   }
   next();
 }
 
-module.exports = { validateName, validateInfo, validateDate };
+function validateWarranty(req, res, next) {
+  const {
+    infos: { warrantyPeriod },
+  } = req.body;
+  if (!warrantyPeriod) {
+    return res.status(400).json({ message: 'warrantyPeriod is required' });
+  }
+  if (warrantyPeriod < 1 || warrantyPeriod > 3) {
+    return res
+      .status(400)
+      .json({ message: 'warrantyPeriod must be between 1 and 3' });
+  }
+  next();
+}
+
+module.exports = { validateName, validateInfo, validateDate, validateWarranty };
