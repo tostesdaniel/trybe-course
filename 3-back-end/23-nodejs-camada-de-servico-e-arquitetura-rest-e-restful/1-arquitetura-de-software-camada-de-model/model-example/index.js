@@ -10,8 +10,12 @@ app.get('/authors', async (req, res) => {
   return res.status(200).json(authors);
 });
 
-app.get('/books', (req, res) => {
-  const books = await Book.getAll();
+app.get('/books', async (req, res) => {
+  const { author_id } = req.query;
+
+  const books = author_id
+    ? await Book.getByAuthorId(author_id)
+    : await Book.getAll();
 
   return res.status(200).json(books);
 });
