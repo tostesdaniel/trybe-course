@@ -14,7 +14,18 @@ const getAll = async () => {
   return books;
 };
 
+const getById = async (id) => {
+  const query =
+    'SELECT id, title, author_id FROM model_example.books WHERE id = ?;';
+  const [book] = await connection.execute(query, [id]);
+
+  if (!book) return null;
+
+  return book[0];
+};
+
 module.exports = {
   getAll,
   getByAuthorId,
+  getById,
 };
