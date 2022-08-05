@@ -54,4 +54,5 @@ const isValid = (firstName, middleName, lastName) => {
 module.exports = {
   getAll,
   findById,
+  isValid,
 };
