@@ -29,7 +29,7 @@ const isValid = async (title, authorId) => {
   if (!title || typeof title !== 'string' || title.length < 3) return false;
   if (
     !authorId ||
-    typeof authorId !== 'string' ||
+    typeof authorId !== 'number' ||
     !(await Author.findById(authorId))
   )
     return false;
@@ -39,7 +39,7 @@ const isValid = async (title, authorId) => {
 
 const create = async (title, authorID) => {
   const query =
-    'INSERT INTO model_example.books (title, author_id) VALUES (?, ?, ?);';
+    'INSERT INTO model_example.books (title, author_id) VALUES (?,?);';
   return connection.execute(query, [title, authorID]);
 };
 
