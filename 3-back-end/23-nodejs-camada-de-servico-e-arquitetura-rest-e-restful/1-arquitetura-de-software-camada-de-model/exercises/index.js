@@ -5,6 +5,14 @@ const port = 3000;
 
 app.use(express.json());
 
+app.get('/user', async (_req, res) => {
+  const users = await User.getUsers();
+
+  if (Array.isArray(users) && !users.length) return res.status(404).json([]);
+
+  return res.status(200).json(users);
+});
+
 app.post('/user', async (req, res) => {
   const { firstName, lastName, email, password } = req.body;
 
