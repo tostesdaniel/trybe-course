@@ -1,4 +1,5 @@
 const connection = require('./connection');
+const Author = require('./Author');
 
 const getByAuthorId = async (author_id) => {
   const [books] = await connection.execute(
@@ -24,8 +25,21 @@ const getById = async (id) => {
   return book[0];
 };
 
+const isValid = async (title, authorId) => {
+  if (!title || typeof title !== 'string' || title.length < 3) return false;
+  if (
+    !authorId ||
+    typeof authorId !== 'string' ||
+    !(await Author.findById(authorId))
+  )
+    return false;
+
+  return true;
+};
+
 module.exports = {
   getAll,
   getByAuthorId,
   getById,
+  isValid,
 };
