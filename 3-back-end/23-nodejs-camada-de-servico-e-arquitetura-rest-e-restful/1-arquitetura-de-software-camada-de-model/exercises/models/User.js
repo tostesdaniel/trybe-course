@@ -20,7 +20,16 @@ const createUser = async (firstName, lastName, email, password) => {
     });
 };
 
+const getUsers = async () => {
+  const query =
+    'SELECT id, first_name, last_name, email FROM model_exercise.users;';
+  const [users] = await pool.execute(query);
+
+  return users;
+};
+
 module.exports = {
   validateUser,
   createUser,
+  getUsers,
 };
