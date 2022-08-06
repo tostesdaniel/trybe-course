@@ -28,8 +28,17 @@ const getUsers = async () => {
   return users;
 };
 
+const getUserById = async (id) => {
+  const query =
+    'SELECT id, first_name, last_name, email FROM model_exercise.users WHERE id = ?;';
+  const [user] = await pool.execute(query, [id]);
+
+  return user;
+};
+
 module.exports = {
   validateUser,
   createUser,
   getUsers,
+  getUserById,
 };
