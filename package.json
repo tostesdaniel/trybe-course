@@ -1,0 +1,23 @@
+{
+  "name": "trybe-course",
+  "version": "1.0.0",
+  "description": "Este repositório contém todas as atividades de aprendizagem desenvolvidas por _[Daniel Tostes](https://www.linkedin.com/in/danieltostes/)_ enquanto estudava na [Trybe](https://www.betrybe.com/)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tostesdaniel/trybe-course.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tostesdaniel/trybe-course/issues"
+  },
+  "homepage": "https://github.com/tostesdaniel/trybe-course#readme",
+  "dependencies": {
+    "eslint-config-trybe-backend": "^1.0.4"
+  }
+}
