@@ -3,38 +3,53 @@ const ProductModel = require('../models/productModel');
 
 const router = express.Router();
 
-router.get('/list-products', async (req, res) => {
+router.get('/', async (_req, res) => {
   const products = await ProductModel.getAll();
 
-  res.send(products);
+  return res.status(200).json(products);
 });
 
-router.get('/get-by-id/:id', async (req, res) => {
+router.get('/:id', async (req, res) => {
   const product = await ProductModel.getById(req.params.id);
 
-  res.send(product);
+  if (!product)
+    return res.status(404).json({ message: 'Produto não encontrado' });
+
+  return res.status(200).json(product);
 });
 
-router.post('/add-product', async (req, res) => {
+router.post('/', async (req, res) => {
   const { name, brand } = req.body;
+
+  if (!name || !brand)
+    return res.status(400).json({ message: 'Há campos não preenchidos' });
 
   const newProduct = await ProductModel.add(name, brand);
 
-  res.send(newProduct);
+  return res.status(201).json(newProduct);
 });
 
-router.post('/delete-product/:id', async (req, res) => {
+router.delete('/:id', async (req, res) => {
   const products = await ProductModel.exclude(req.params.id);
 
-  res.send(products);
+  if (!products)
+    return res.status(404).json({ message: 'Produto não encontrado' });
+
+  return res.status(200).json({ message: 'Produto deletado com sucesso' });
 });
 
-router.post('/update-product/:id', async (req, res) => {
+router.put('/:id', async (req, res) => {
   const { name, brand } = req.body;
+
+  if (!name || !brand)
+    return res.status(400).json({ message: 'Há campos não preenchidos' });
 
   const products = await ProductModel.update(req.params.id, name, brand);
 
-  res.send(products);
+  if (!products)
+    return res.status(404).json({ message: 'Produto não encontrado' });
+
+  return res.status(200).json({ message: 'Produto editado com sucesso' });
 });
 
 module.exports = router;
