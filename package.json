@@ -4,7 +4,7 @@
   "description": "Este repositório contém todas as atividades de aprendizagem desenvolvidas por _[Daniel Tostes](https://www.linkedin.com/in/danieltostes/)_ enquanto estudava na [Trybe](https://www.betrybe.com/)",
   "main": "index.js",
   "scripts": {
-    "test": "mocha ./tests/**/*$NAME*.test.js --exit"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
