@@ -1,6 +1,8 @@
 /* eslint-disable mocha/no-mocha-arrows */
+const sinon = require('sinon');
 const { expect } = require('chai');
 
+const connection = require('../../models/connection');
 const MoviesModel = require('../../models/movieModel');
 
 describe('Insere um novo filme no BD', () => {
@@ -9,6 +11,17 @@ describe('Insere um novo filme no BD', () => {
     directedBy: 'Jane Dow',
     releaseYear: 1999,
   };
+
+  before(async () => {
+    const execute = [{ insertId: 1 }]; // retorno esperado nesse teste
+
+    sinon.stub(connection, 'execute').resolves(execute);
+  });
+
+  // Restauraremos a função `execute` original após os testes.
+  after(async () => {
+    connection.execute.restore();
+  });
 
   describe('quando é inserido com sucesso', () => {
     it('retorna um objeto', async () => {
