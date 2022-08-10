@@ -1,3 +1,4 @@
+/* eslint-disable sonarjs/prefer-single-boolean-return */
 const MoviesModel = require('../models/movieModel');
 
 const isValid = (title, directedBy, releaseYear) => {
