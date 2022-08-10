@@ -1,15 +1,7 @@
 /* eslint-disable mocha/no-mocha-arrows */
 const { expect } = require('chai');
+const MoviesService = require('../../services/movieService');
 
-const MoviesService = {
-  create: () => {},
-};
-
-/*
-  Precisamos validar se estamos recebendo todos os campos
-  necessários para a operação. Como trata-se de uma regra
-  de negócio, validaremos na camada de serviços.
-*/
 describe('Insere um novo filme no BD', () => {
   describe('quando o payload informado não é válido', () => {
     const payloadMovie = {};
