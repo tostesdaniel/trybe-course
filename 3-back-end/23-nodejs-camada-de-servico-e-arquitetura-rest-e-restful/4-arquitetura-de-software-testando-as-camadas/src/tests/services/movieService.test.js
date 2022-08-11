@@ -52,3 +52,41 @@ describe('Insere um novo filme no BD', () => {
     });
   });
 });
+
+describe('Ao resgatar um filme por id do banco de dados', () => {
+  const MOVIE = {
+    id: 8,
+    title: 'Example Movie',
+    directedBy: 'Jane Dow',
+    releaseYear: 1999,
+  };
+
+  describe('Quando existe', () => {
+    before(async () => sinon.stub(MoviesModel, 'getById').resolves(MOVIE));
+
+    after(async () => MoviesModel.getById.restore());
+
+    it('Retorna um objeto', async () => {
+      const movie = await MoviesModel.getById(8);
+
+      expect(movie).to.be.an('object');
+    });
+
+    it('Retorna um objeto com chaves id, title, directedBy e releaseYear', async () => {
+      const movie = await MoviesModel.getById(8);
+
+      expect(movie).to.have.all.keys(
+        'id',
+        'title',
+        'directedBy',
+        'releaseYear'
+      );
+    });
+
+    it('Retorna um objeto com chaves e valores esperados', async () => {
+      const movie = await MoviesModel.getById(8);
+      
+      expect(movie).to.be.equal(MOVIE);
+    });
+  });
+});
