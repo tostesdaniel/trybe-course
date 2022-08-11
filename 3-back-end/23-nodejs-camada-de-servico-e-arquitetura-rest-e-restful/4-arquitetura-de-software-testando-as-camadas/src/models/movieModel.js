@@ -15,9 +15,6 @@ const create = async ({ title, directedBy, releaseYear }) => {
 const getById = async (id) => {
   const query = 'SELECT * FROM model_example.movies WHERE id = ?';
   const [result] = await connection.execute(query, [id]);
-  console.log('🚀 ~ file: movieModel.js ~ line 18 ~ getById ~ result', result);
-
-  if (Array.isArray(result) && !result.length) return null;
 
   return result[0];
 };
