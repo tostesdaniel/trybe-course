@@ -21,6 +21,15 @@ const create = async ({ title, directedBy, releaseYear }) => {
   };
 };
 
+const getById = async (id) => {
+  const movie = await MoviesModel.getById(id);
+
+  if (!movie) return null;
+
+  return movie;
+};
+
 module.exports = {
   create,
+  getById,
 };
