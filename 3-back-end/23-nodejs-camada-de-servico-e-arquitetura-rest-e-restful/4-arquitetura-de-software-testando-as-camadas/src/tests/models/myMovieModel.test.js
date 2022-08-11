@@ -4,17 +4,21 @@ const connection = require('../../models/connection');
 const movieModel = require('../../models/movieModel');
 
 describe('Ao resgatar um filme do banco de dados', () => {
-  const MOVIE = {
-    id: 8,
-    title: 'Example Movie',
-    directedBy: 'Jane Dow',
-    releaseYear: 1999,
-  };
+  const MOVIE = [
+    [
+      {
+        id: 8,
+        title: 'Example Movie',
+        directedBy: 'Jane Dow',
+        releaseYear: 1999,
+      },
+    ],
+  ];
 
   describe('Quando o filme existe', () => {
-    before(async () => sinon.stub(movieModel, 'getById').resolves(MOVIE));
+    before(async () => sinon.stub(connection, 'execute').resolves(MOVIE));
 
-    after(async () => movieModel.getById.restore());
+    after(async () => connection.execute.restore());
 
     it('Retorna um objeto', async () => {
       const movie = await movieModel.getById(8);
@@ -35,8 +39,13 @@ describe('Ao resgatar um filme do banco de dados', () => {
 
     it('Retorna chave', async () => {
       const movie = await movieModel.getById(8);
-  
-      expect(movie).to.be.equal(MOVIE);
+
+      expect(movie).to.be.eql({
+        id: 8,
+        title: 'Example Movie',
+        directedBy: 'Jane Dow',
+        releaseYear: 1999,
+      });
     });
   });
 
@@ -48,7 +57,7 @@ describe('Ao resgatar um filme do banco de dados', () => {
     it('Retorna null', async () => {
       const movie = await movieModel.getById(800);
 
-      expect(movie).to.be.equal(null);
+      expect(movie).to.be.equal(undefined);
     });
   });
 });
