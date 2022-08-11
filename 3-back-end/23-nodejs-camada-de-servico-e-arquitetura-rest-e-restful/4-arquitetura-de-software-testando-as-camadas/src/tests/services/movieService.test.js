@@ -4,6 +4,7 @@ const { expect } = require('chai');
 
 const MoviesModel = require('../../models/movieModel');
 const MoviesService = require('../../services/movieService');
+const connection = require('../../models/connection');
 
 describe('Insere um novo filme no BD', () => {
   describe('quando o payload informado não é válido', () => {
@@ -85,8 +86,17 @@ describe('Ao resgatar um filme por id do banco de dados', () => {
 
     it('Retorna um objeto com chaves e valores esperados', async () => {
       const movie = await MoviesService.getById(8);
-      
+
       expect(movie).to.be.equal(MOVIE);
+    });
+  });
+
+  describe('Quando não existe', () => {
+    before(async () => sinon.stub(connection, 'execute').resolves([[]]))
+    it('Retorna null', async () => {
+      const movie = await MoviesService.getById(8);
+
+      expect(movie).to.be.null;
     });
   });
 });
