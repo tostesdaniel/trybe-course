@@ -141,7 +141,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [X] 19-1: _Utilizando containers_
 - [X] 19-2: _Manipulando imagens no Docker_
 - [X] 19-3: _Orquestrando containers com Docker Compose_
-- [X] 19-4: _[Projeto - Docker Todo-List]()_
+- [X] 19-4: _[Projeto - Docker Todo-List](https://github.com/tostesdaniel/docker-todo-list)_
 
 ##### Bloco 20: Introdução a SQL
 
@@ -165,12 +165,12 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [X] 22-3: _Mocha, Chai e Sinon - Testes de Back-end com Node.js
 - [X] 22-4: _Express - HTTP com Node.js
 - [X] 22-5: _Express - Middlewares
-- [X] 22-6: _[Projeto - Talker Manager]()_
+- [X] 22-6: _[Projeto - Talker Manager](https://github.com/tostesdaniel/talker-manager)_
 
 ##### Bloco 23: Node.js: Camada de Serviço e Arquitetura REST e Restful
 
 - [X] 22-1: _Introdução a Arquitetura de Software - Camada Model_
 - [X] 22-2: _Arquitetura de Software - Camada de Controller e Service_
 - [X] 22-3: _Arquitetura Web - REST e Restful_
-- [ ] 22-4: _Arquitetura de Software - Testando as Camadas_
-- [ ] 22-5: _[Projeto - Store Manager]()_
+- [X] 22-4: _Arquitetura de Software - Testando as Camadas_
+- [X] 22-5: _[Projeto - Store Manager]()_
