@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const { PORT } = process.env;
 
 const controllers = require('./controllers');
-const middlewares = require('./middlewares');
+const { auth, error } = require('./middlewares');
 
 const app = express();
 
@@ -22,10 +22,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/ping', controllers.ping);
+app.get('/users/me', auth, controllers.me);
 
 app.post('/login', controllers.login);
 
-app.use(middlewares.error);
+app.use(error);
 
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}`);
