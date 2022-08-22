@@ -28,4 +28,13 @@ module.exports = {
 
     return book;
   },
+  delete: async (id) => {
+    const book = await Book.destroy({
+      where: {
+        id,
+      },
+    });
+
+    return book;
+  },
 };
