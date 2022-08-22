@@ -15,4 +15,10 @@ module.exports = {
 
     return res.status(200).json(book);
   },
+  create: async (req, res) => {
+    const { title, author, pageQuantity } = req.body;
+    const book = await Book.create({ title, author, pageQuantity });
+
+    res.status(201).json(book);
+  },
 };
