@@ -11,4 +11,9 @@ module.exports = {
 
     return book;
   },
+  create: async ({ title, author, pageQuantity }) => {
+    const book = await Book.create({ title, author, pageQuantity });
+
+    return book;
+  },
 };
