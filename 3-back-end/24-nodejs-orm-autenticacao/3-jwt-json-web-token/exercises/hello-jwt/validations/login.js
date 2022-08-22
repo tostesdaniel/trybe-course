@@ -1,7 +1,7 @@
 const Joi = require('joi');
 
-module.exports = () => {
-  Joi.object({
+const schema = {
+  login: Joi.object({
     username: Joi.string().alphanum().min(5).required()
     .messages({
       'string.min': '"username" length must be 5 characters long',
@@ -11,5 +11,7 @@ module.exports = () => {
       'string.min': '"password" length must be 5 characters long',
       'any.required': '"password" is required',
     }),
-  });
+  }),
 };
+
+module.exports = schema;
