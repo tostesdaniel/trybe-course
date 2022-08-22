@@ -10,4 +10,6 @@ app.use(express.json());
 app.get('/books', Book.getAll);
 app.get('/books/:id', Book.getById);
 
+app.post('/books', Book.create);
+
 app.listen(PORT, () => console.log(`Listening on port ${PORT}!`));
