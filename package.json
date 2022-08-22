@@ -19,7 +19,6 @@
   "homepage": "https://github.com/tostesdaniel/trybe-course#readme",
   "dependencies": {
     "eslint-config-trybe-backend": "^1.0.4",
-    "eslint-config-trybe-frontend": "^1.3.0",
-    "jsonwebtoken": "^8.5.1"
+    "eslint-config-trybe-frontend": "^1.3.0"
   }
 }
