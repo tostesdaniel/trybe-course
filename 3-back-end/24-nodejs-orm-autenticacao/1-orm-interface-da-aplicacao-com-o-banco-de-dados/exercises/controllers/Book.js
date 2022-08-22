@@ -21,4 +21,14 @@ module.exports = {
 
     res.status(201).json(book);
   },
+  update: async (req, res) => {
+    const { id } = req.params;
+    const { title, author, pageQuantity } = req.body;
+
+    const book = await Book.update(id, { title, author, pageQuantity });
+
+    if (!book) return res.status(404).json({ message: 'Book not found!' });
+
+    return res.status(200).json({ message: 'Book updated!' });
+  },
 };
