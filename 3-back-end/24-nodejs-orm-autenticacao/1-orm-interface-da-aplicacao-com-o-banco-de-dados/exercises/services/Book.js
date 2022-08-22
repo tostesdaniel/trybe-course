@@ -16,4 +16,16 @@ module.exports = {
 
     return book;
   },
+  update: async (id, { title, author, pageQuantity }) => {
+    const [book] = await Book.update(
+      { title, author, pageQuantity },
+      {
+        where: {
+          id,
+        },
+      },
+    );
+
+    return book;
+  },
 };
