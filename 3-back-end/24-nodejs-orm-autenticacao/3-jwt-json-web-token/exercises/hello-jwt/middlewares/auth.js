@@ -9,7 +9,6 @@ module.exports = (req, res, next) => {
 
   try {
     const payload = jwt.verify(token, JWT_SECRET);
-    console.log('🚀 ~ file: auth.js ~ line 14 ~ payload', payload);
     req.user = payload;
 
     return next();
