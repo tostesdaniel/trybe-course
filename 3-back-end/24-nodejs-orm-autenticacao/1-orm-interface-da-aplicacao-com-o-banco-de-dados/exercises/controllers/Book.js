@@ -31,4 +31,13 @@ module.exports = {
 
     return res.status(200).json({ message: 'Book updated!' });
   },
+  delete: async (req, res) => {
+    const { id } = req.params;
+
+    const book = await Book.delete(id);
+
+    if (!book) return res.status(404).json({ message: 'Book not found!' });
+
+    return res.status(200).json({ message: 'Book removed!' });
+  },
 };
