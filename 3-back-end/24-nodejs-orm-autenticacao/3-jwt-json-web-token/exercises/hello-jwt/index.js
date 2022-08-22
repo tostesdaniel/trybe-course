@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const { PORT } = process.env;
 
 const controllers = require('./controllers');
-const { auth, error } = require('./middlewares');
+const { admin, auth, error } = require('./middlewares');
 
 const app = express();
 
@@ -23,6 +23,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/ping', controllers.ping);
 app.get('/users/me', auth, controllers.me);
+app.get('/top-secret', auth, admin, controllers.topSecret);
 
 app.post('/login', controllers.login);
 
