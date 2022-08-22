@@ -12,4 +12,6 @@ app.get('/books/:id', Book.getById);
 
 app.post('/books', Book.create);
 
+app.put('/books/:id', Book.update);
+
 app.listen(PORT, () => console.log(`Listening on port ${PORT}!`));
