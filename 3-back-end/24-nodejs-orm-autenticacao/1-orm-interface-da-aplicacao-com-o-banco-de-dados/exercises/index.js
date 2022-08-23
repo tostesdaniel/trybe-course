@@ -8,6 +8,7 @@ const PORT = process.env.PORT || DEFAULT_PORT;
 app.use(express.json());
 
 app.get('/books', Book.getAll);
+app.get('/books/search', Book.getByAuthor);
 app.get('/books/:id', Book.getById);
 
 app.post('/books', Book.create);
