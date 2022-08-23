@@ -25,7 +25,6 @@ module.exports = {
   },
   getByAuthor: async (req, res) => {
     const { author } = req.query;
-    console.log('🚀 ~ file: Book.js ~ line 20 ~ getByAuthor: ~ author', author);
 
     const books = await Book.getByAuthor(author);
 
