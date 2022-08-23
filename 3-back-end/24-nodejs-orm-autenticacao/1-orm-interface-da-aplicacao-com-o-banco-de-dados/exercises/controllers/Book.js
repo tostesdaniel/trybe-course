@@ -31,16 +31,16 @@ module.exports = {
     return res.status(200).json(books);
   },
   create: async (req, res) => {
-    const { title, author, pageQuantity } = req.body;
-    const book = await Book.create({ title, author, pageQuantity });
+    const { title, author, pageQuantity, publisher } = req.body;
+    const book = await Book.create({ title, author, pageQuantity, publisher });
 
     res.status(201).json(book);
   },
   update: async (req, res) => {
     const { id } = req.params;
-    const { title, author, pageQuantity } = req.body;
+    const { title, author, pageQuantity, publisher } = req.body;
 
-    const book = await Book.update(id, { title, author, pageQuantity });
+    const book = await Book.update(id, { title, author, pageQuantity, publisher });
 
     if (!book) return res.status(404).json({ message: 'Book not found!' });
 
