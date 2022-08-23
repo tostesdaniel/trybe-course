@@ -1,3 +1,4 @@
+const { Op } = require('sequelize');
 const { Book } = require('../models');
 
 module.exports = {
@@ -10,6 +11,17 @@ module.exports = {
     const book = await Book.findByPk(id);
 
     return book;
+  },
+  getByAuthor: async (author) => {
+    const books = await Book.findOne({
+      where: {
+        author: {
+          [Op.like]: `%${author}%`,
+        },
+      },
+    });
+
+    return books;
   },
   create: async ({ title, author, pageQuantity }) => {
     const book = await Book.create({ title, author, pageQuantity });
