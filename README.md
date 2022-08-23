@@ -162,9 +162,9 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 
 - [X] 22-1: _Introdução a Node.js_
 - [X] 22-2: _Node.js - Fluxo assíncrono_
-- [X] 22-3: _Mocha, Chai e Sinon - Testes de Back-end com Node.js
-- [X] 22-4: _Express - HTTP com Node.js
-- [X] 22-5: _Express - Middlewares
+- [X] 22-3: _Mocha, Chai e Sinon - Testes de Back-end com Node.js_
+- [X] 22-4: _Express - HTTP com Node.js_
+- [X] 22-5: _Express - Middlewares_
 - [X] 22-6: _[Projeto - Talker Manager](https://github.com/tostesdaniel/talker-manager)_
 
 ##### Bloco 23: Node.js: Camada de Serviço e Arquitetura REST e Restful
