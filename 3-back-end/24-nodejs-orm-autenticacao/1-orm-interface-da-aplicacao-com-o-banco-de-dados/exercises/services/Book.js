@@ -3,7 +3,7 @@ const { Book } = require('../models');
 
 module.exports = {
   getAll: async () => {
-    const books = await Book.findAll();
+    const books = await Book.findAll({ order: [['title']] });
 
     return books;
   },
@@ -19,6 +19,7 @@ module.exports = {
           [Op.like]: `%${author}%`,
         },
       },
+      order: [['title']],
     });
 
     return books;
