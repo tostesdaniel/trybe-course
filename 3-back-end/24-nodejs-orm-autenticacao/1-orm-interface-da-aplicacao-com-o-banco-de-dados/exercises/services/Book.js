@@ -24,14 +24,14 @@ module.exports = {
 
     return books;
   },
-  create: async ({ title, author, pageQuantity }) => {
-    const book = await Book.create({ title, author, pageQuantity });
+  create: async ({ title, author, pageQuantity, publisher }) => {
+    const book = await Book.create({ title, author, pageQuantity, publisher });
 
     return book;
   },
-  update: async (id, { title, author, pageQuantity }) => {
+  update: async (id, { title, author, pageQuantity, publisher }) => {
     const [book] = await Book.update(
-      { title, author, pageQuantity },
+      { title, author, pageQuantity, publisher },
       {
         where: {
           id,
