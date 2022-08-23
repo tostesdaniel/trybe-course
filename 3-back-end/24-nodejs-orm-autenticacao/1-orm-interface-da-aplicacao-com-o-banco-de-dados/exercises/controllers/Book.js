@@ -1,8 +1,16 @@
 const Book = require('../services/Book');
 
 module.exports = {
-  getAll: async (_req, res) => {
-    const books = await Book.getAll();
+  getAll: async (req, res) => {
+    const { author } = req.query;
+
+    let books;
+
+    if (author) {
+      books = await Book.getByAuthor(author);
+    } else {
+      books = await Book.getAll();
+    }
 
     return res.status(200).json(books);
   },
