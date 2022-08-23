@@ -16,9 +16,5 @@
   "bugs": {
     "url": "https://github.com/tostesdaniel/trybe-course/issues"
   },
-  "homepage": "https://github.com/tostesdaniel/trybe-course#readme",
-  "dependencies": {
-    "eslint-config-trybe-backend": "^1.0.4",
-    "eslint-config-trybe-frontend": "^1.3.0"
-  }
+  "homepage": "https://github.com/tostesdaniel/trybe-course#readme"
 }
