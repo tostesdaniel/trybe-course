@@ -128,7 +128,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [X] 17-1: _Context API do React_
 - [X] 17-2: _React Hooks - useState e useContext_
 - [X] 17-3: _React Hooks - useEffect e Hooks customizados_
-- [X] 17-4: _[Projeto - StarWars Datatable com Context API e Hooks]()_
+- [X] 17-4: _[Projeto - StarWars Datatable com Context API e Hooks](https://github.com/tostesdaniel/star-wars-planets)_
 
 ##### Bloco 18: Projeto Final de Front-end
 
@@ -149,14 +149,14 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [X] 20-2: _Encontrando dados em um banco de dados_
 - [X] 20-3: _Filtrando dados de forma específica_
 - [X] 20-4: _Manipulando tabelas_
-- [X] 20-5: _[Projeto - All For One]()_
+- [X] 20-5: _[Projeto - All For One](https://github.com/tostesdaniel/all-for-one)_
 
 ##### Bloco 21: Bancos de dados relacionais
 
 - [X] 21-1: _Funções mais usadas no SQL_
 - [X] 21-2: _Descomplicando JOINs_
 - [X] 21-3: _Transformando ideias em um modelo de banco de dados_
-- [X] 21-4: _[Projeto - One For All]()_
+- [X] 21-4: _[Projeto - One For All](https://github.com/tostesdaniel/one-for-all)_
 
 ##### Bloco 22: Introdução ao desenvolvimento Web com Node.js
 
@@ -173,10 +173,11 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [X] 23-2: _Arquitetura de Software - Camada de Controller e Service_
 - [X] 23-3: _Arquitetura Web - REST e Restful_
 - [X] 23-4: _Arquitetura de Software - Testando as Camadas_
-- [X] 23-5: _[Projeto - Store Manager]()_
+- [X] 23-5: _[Projeto - Store Manager](https://github.com/tostesdaniel/store-manager-api)_
 
 ##### Bloco 24: Node.js: ORM e Autenticação
 
 - [X] 24-1: _Introdução a ORM - Interface da aplicação com banco de dados_
 - [X] 24-2: _ORM - Associations_
 - [X] 24-3: _JWT_
+- [X] 24-4: _[Projeto - Blogs API]()_
