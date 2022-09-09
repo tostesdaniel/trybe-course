@@ -1,8 +1,8 @@
-enum Weather {
-  Outono = 'Outono',
-  Inverno = 'Inverno',
-  Primavera = 'Primavera',
-  Verao = 'Verão',
+enum Seasons {
+  Autumn = 'Autumn',
+  Winter = 'Winter',
+  Spring = 'Spring',
+  Summer = 'Summer',
 }
 
-export default Weather;
+export default Seasons;
