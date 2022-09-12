@@ -36,7 +36,7 @@ export default class BookModel {
     const { title, price, author, isbn } = book;
     await this.connection.execute(
       'UPDATE books SET title=?, price=?, author=?, isbn=? WHERE id=?',
-      [title, price, author, isbn]
+      [title, price, author, isbn, id]
     );
   }
 
