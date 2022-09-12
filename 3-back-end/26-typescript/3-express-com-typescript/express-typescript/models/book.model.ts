@@ -14,6 +14,13 @@ export default class BookModel {
     return rows as Book[];
   }
 
+  public async getById(id: number): Promise<Book> {
+    const result = await this.connection.execute('SELECT * FROM books WHERE id=?', [id]);
+    const [rows] = result;
+    const [book] = rows as Book[];
+    return book;
+  }
+
   public async create(book: Book): Promise<Book> {
     const { title, price, author, isbn } = book;
     const result = await this.connection.execute<ResultSetHeader>(
