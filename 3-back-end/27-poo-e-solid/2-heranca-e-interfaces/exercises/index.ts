@@ -1,5 +1,6 @@
 import Person from './Person';
 import Student from './Student';
+import Subject from './Subject';
 
 const me = new Person('Daniel', new Date('1999/09/17'));
 // const definitelyNotMe = new Person('Daniel', new Date('2999/09/17'));
@@ -13,3 +14,12 @@ console.log('me', me);
 const daniel = new Student('Daniel', new Date('1999/09/17'));
 
 console.log('daniel', daniel);
+
+/* Subject ------------------------------------------------------------------ */
+const english = new Subject('English');
+const math = new Subject('Math');
+const chemistry = new Subject('Chemistry');
+
+console.log('english', english);
+console.log('math', math);
+console.log('chemistry', chemistry);
