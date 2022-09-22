@@ -3,8 +3,8 @@ import Person from './Person';
 
 export default class Student extends Person implements Enrollable {
   private _enrollment: string;
-  private _examsGrades: number[];
-  private _worksGrades: number[];
+  private _examsGrades: number[] = [];
+  private _worksGrades: number[] = [];
 
   constructor(name: string, birthDate: Date) {
     super(name, birthDate);
