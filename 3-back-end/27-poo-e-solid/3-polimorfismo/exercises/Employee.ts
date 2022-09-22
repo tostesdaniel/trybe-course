@@ -2,7 +2,7 @@ import Enrollable from './interfaces/Enrollable';
 import Person from './Person';
 
 export default class Employee extends Person implements Enrollable {
-  private _admissionDate: Date;
+  private _admissionDate: Date = new Date();
   private _enrollment: string;
 
   constructor(name: string, birthDate: Date, private _salary: number) {
