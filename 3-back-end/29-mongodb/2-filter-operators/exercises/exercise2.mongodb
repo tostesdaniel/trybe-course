@@ -1,0 +1,3 @@
+class.superheroes.find({
+  "aspects.height": { $lt: 180 }
+})
