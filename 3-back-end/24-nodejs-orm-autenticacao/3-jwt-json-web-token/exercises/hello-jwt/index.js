@@ -1,0 +1,34 @@
+require('dotenv').config();
+const express = require('express');
+const cors = require('cors');
+const bodyParser = require('body-parser');
+
+const { PORT } = process.env;
+
+const controllers = require('./controllers');
+const { admin, auth, error } = require('./middlewares');
+
+const app = express();
+
+app.use(
+  cors({
+    origin: `http://localhost:${PORT}`,
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Authorization'],
+  }),
+);
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.get('/ping', controllers.ping);
+app.get('/users/me', auth, controllers.me);
+app.get('/top-secret', auth, admin, controllers.topSecret);
+
+app.post('/login', controllers.login);
+
+app.use(error);
+
+app.listen(PORT, () => {
+  console.log(`App listening on port ${PORT}`);
+});
