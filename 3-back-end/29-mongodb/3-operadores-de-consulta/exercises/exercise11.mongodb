@@ -1,0 +1,6 @@
+use('cinema')
+db.movies.find({
+  category: { $in: ['adventure', 'family'] },
+  imdbRating: { $not: { $lt: 7 } },
+  ratings: { $size: 4 }
+})
