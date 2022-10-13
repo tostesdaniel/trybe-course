@@ -1,0 +1,10 @@
+{
+  "overrides": [
+    {
+      "files": "*.mongodb",
+      "options": {
+        "parser": "babel"
+      }
+    }
+  ]
+}
