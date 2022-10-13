@@ -1,0 +1,5 @@
+use('cinema')
+db.movies.find({
+  category: { $all: ['action', 'sci-fi'] },
+  imdbRating: { $gt: 7}
+})
