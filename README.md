@@ -181,3 +181,30 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [X] 24-2: _ORM - Associations_
 - [X] 24-3: _JWT_
 - [X] 24-4: _[Projeto - Blogs API]()_
+
+### Bloco 25: Deployment
+
+- [X] 25-1: _Infraestrutura: Deploy com Heroku_
+- [X] 25-2: _Deploy com Docker & Heroku_
+- [X] 25-3: _[Projeto - Stranger Things]()_
+
+### Bloco 26: Introdução a TypeScript
+
+- [X] 26-1: _Introdução ao TypeScript_
+- [X] 26-2: _Tipagem Estática e Generics_
+- [X] 26-3: _Express com TypeScript_
+- [X] 26-4: _[Projeto - Trybesmith]()_
+
+### Bloco 27: Programação Orientada a Objetos (POO) e SOLID
+
+- [X] 27-1: _Introdução à Orientação a Objetos_
+- [X] 27-2: _Herança e Interfaces_
+- [X] 27-3: _Polimorfismo_
+- [X] 27-4: _SOLID: Introdução e Princípios S, O e D_
+- [x] 27-5: _SOLID: Princípios L e I_
+- [x] 27-6: _[Projeto - Trybers and Dragons]()_
+
+### Bloco 28: Trybe Futebol Clube
+
+- [x] 28.1: _[Projeto TFC: Trybe Futebol Clube]()_
+
