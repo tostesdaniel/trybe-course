@@ -14,10 +14,8 @@ describe("Frame Service", () => {
     sinon.stub(frameModel, "create").resolves(frameMockWithId);
     sinon
       .stub(frameModel, "readOne")
-      // na chamada de index 0 `frameModel.readOne` vai responder um fakeFrame
       .onCall(0)
       .resolves(frameMockWithId)
-      // já na próxima chamada ele vai mudar seu retorno, isso pode ser feito várias vezes
       .onCall(1)
       .resolves(null);
   });
@@ -51,8 +49,8 @@ describe("Frame Service", () => {
     });
 
     it("Failure", async () => {
+      let error;
       try {
-        // a mesma chamada que o teste acima aqui vai gerar o erro por causa do nosso sinon.stub(...).onCall(1)
         await frameService.readOne(frameMockWithId._id);
       } catch (err: any) {
         error = err;
